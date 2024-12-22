@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 // Import authenticator
-const checkLogin = require("../controllers/authenticate.js");
+const authenticateUser = require("../controllers/authenticate.js");
 
 // Import Models
 const User = require("../models/user.model");
@@ -30,17 +31,26 @@ router.post("/signup", async (req, res) => {
 // Login
 router.post("/login", (req, res) => {
   let { username, password } = req.body;
-  Admin.findOne({ username: username })
-    .then((record) => {
-      if (!record) {
-        res.json(`${username} not found`);
+  User.findOne({ username: username })
+    .then(async (user) => {
+      if (!user) {
+        res.json("Invalid username or password");
       } else {
-        const payload = {
-          username,
+        const isPasswordValid = await bcrypt.compare(
           password,
-        };
-        const token = jwt.sign(payload, "secret", { expiresIn: "1h" });
-        res.json(token);
+          user.passwordHash
+        );
+
+        if (!isPasswordValid) {
+          throw new Error("Invalid username or password");
+        }
+
+        const token = jwt.sign(
+          { userId: user._id, email: user.email },
+          "secret",
+          { expiresIn: "1h" }
+        );
+        res.status(200).json({ token });
       }
     })
     .catch((err) => res.status(400).json(`Error: ${err}`));
