@@ -7,7 +7,7 @@ const checkLogin = require("../controllers/authenticate.js");
 const User = require("../models/user.model");
 
 // Sign up
-router.post("/", (req, res) => {
+router.post("/signup", (req, res) => {
   let username = req.body.username;
   let passwordHash = req.body.passwordHash;
   let email = req.body.email;
