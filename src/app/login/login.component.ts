@@ -39,6 +39,9 @@ export class LoginComponent {
       if (response.status === 200) {
         console.log('Login successful:', response.data);
 
+        console.log('response id: ', response.data.id);
+        localStorage.setItem('userId', response.data.id);
+
         this.cookieService.set(
           'token',
           response.data.token,

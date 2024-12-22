@@ -2,9 +2,6 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Import authenticator
-const authenticateUser = require("../controllers/authenticate.js");
-
 // Import Models
 const User = require("../models/user.model");
 
@@ -51,7 +48,7 @@ router.post("/login", (req, res) => {
           "secret",
           { expiresIn: "1h" }
         );
-        res.status(200).json({ token });
+        res.status(200).json({ id: user._id, token: token });
       }
     })
     .catch((err) => res.status(400).json(`Error: ${err}`));

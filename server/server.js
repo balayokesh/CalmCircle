@@ -17,7 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // Configure routes
 const indexRouter = require("./routes/index");
+const moodRoutes = require("./routes/mood");
 app.use("/", indexRouter);
+app.use("/mood", moodRoutes);
 
 // Connect database
 mongoose.connect(process.env.DATABASE_URL, {
