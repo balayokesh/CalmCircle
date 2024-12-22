@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
-import sha256 from 'js-sha256';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -25,11 +24,9 @@ export class SignUpComponent {
   constructor() {}
 
   onSubmit() {
-    const password = this.user.password;
-    const hashedPassword = sha256(password);
     const payload = {
       username: this.user.username,
-      passwordHash: hashedPassword,
+      password: this.user.password,
       email: this.user.email,
       profilePicture: this.user.profilePicture,
       isAnonymous: this.user.isAnonymous,
