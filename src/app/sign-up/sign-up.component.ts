@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import axios from 'axios';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sign-up',
@@ -33,7 +34,7 @@ export class SignUpComponent {
     };
 
     axios
-      .post('https://znjxgg-3000.csb.app/signup', payload)
+      .post(`${environment.apiUrl}/signup`, payload)
       .then((response) => {
         console.log(response.data);
         this.successMessage = 'User created successfully! You can now log in.';

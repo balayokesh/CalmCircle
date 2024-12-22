@@ -34,7 +34,7 @@ router.post("/login", (req, res) => {
   User.findOne({ username: username })
     .then(async (user) => {
       if (!user) {
-        res.json("Invalid username or password");
+        res.status(401).json({ message: "Invalid username or password" });
       } else {
         const isPasswordValid = await bcrypt.compare(
           password,
@@ -42,7 +42,8 @@ router.post("/login", (req, res) => {
         );
 
         if (!isPasswordValid) {
-          throw new Error("Invalid username or password");
+          res.status(401).json({ message: "Invalid username or password" });
+          return;
         }
 
         const token = jwt.sign(
