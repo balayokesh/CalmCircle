@@ -1,26 +1,25 @@
 <div id="header">
-  <h1 (click)="redirectToHome()">Calm Circle</h1>
+  <h1 (click)="redirectToHome()" class="ms-3 mt-1">Calm Circle</h1>
   <div class="auth-links">
     <a (click)="logout()">Logout</a>
   </div>
 </div>
 
-<div class="border mx-4">
+<div>
   <ul
     ngbNav
     #nav="ngbNav"
     [(activeId)]="active"
     [destroyOnHide]="false"
-    class="nav-tabs text-center"
+    class="text-center justify-content-center nav-tabs fs-5"
+    style="background-color: #e3f2fd;"
   >
     <li [ngbNavItem]="1" [destroyOnHide]="true">
-      <button ngbNavLink>Log Mood</button>
+      <button ngbNavLink>Track Mood</button>
       <ng-template ngbNavContent>
-        <ngb-alert [dismissible]="false" class="d-block mt-3" type="danger">
-          This tab content DOM will de destroyed when not active
-        </ngb-alert>
-
+        <div class=" px-5 container">
         <app-mood-log></app-mood-log>
+      </div>
       </ng-template>
     </li>
     <li [ngbNavItem]="2" [destroyOnHide]="true">
@@ -29,7 +28,6 @@
         <ngb-alert [dismissible]="false" class="d-block mt-3" type="danger">
           This tab content DOM will de destroyed when not active
         </ngb-alert>
-
         <p>
           Raw denim you probably haven't heard of them jean shorts Austin.
           Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache

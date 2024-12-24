@@ -1,6 +1,5 @@
-<p>mood-log works!</p>
-
 <form class="mb-4" (ngSubmit)="logMood()">
+  <p>How are u feeling now? (Log mood status daily and track your progress with below chart)</p>
   <div class="row">
     <div class="col-md-4">
       <select
@@ -23,7 +22,13 @@
       />
     </div>
     <div class="col-md-2">
-      <button type="submit" class="btn btn-primary w-100">Log Mood</button>
+      <button type="submit" class="btn btn-outline-primary w-100">Log Mood</button>
     </div>
   </div>
 </form>
+
+<div class="card mb-4 w-xs-50">
+  <div class="card-body">
+    <canvas id="moodChart"></canvas>
+  </div>
+</div>

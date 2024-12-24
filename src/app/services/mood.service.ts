@@ -34,7 +34,7 @@ export class MoodService {
 
   async logMood(moodData: any): Promise<any> {
     try {
-      const response = await this.axiosInstance.post('/log', moodData);
+      const response = await this.axiosInstance.post('/', moodData);
       return response.data;
     } catch (error) {
       console.error('Error logging mood:', error);
@@ -44,7 +44,7 @@ export class MoodService {
 
   async getMoodHistory(userId: string): Promise<any> {
     try {
-      const response = await this.axiosInstance.get(`/history/${userId}`);
+      const response = await this.axiosInstance.get(`/${userId}`);
       return response.data;
     } catch (error: any) {
       console.error(
