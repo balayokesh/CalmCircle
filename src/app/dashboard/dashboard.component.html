@@ -38,6 +38,14 @@
         </div>
       </ng-template>
     </li>
+    <li [ngbNavItem]="4" [destroyOnHide]="true">
+      <button ngbNavLink class="mx-3">Reminders</button>
+      <ng-template ngbNavContent>
+        <div class="px-5 container">
+          <app-notification-manager></app-notification-manager>
+        </div>
+      </ng-template>
+    </li>
   </ul>
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
