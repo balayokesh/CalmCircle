@@ -29,7 +29,7 @@ export class ExerciseComponent {
       description:
         'A breathing technique that involves visualizing a triangle while you breathe.',
       userStreak: 3,
-      isAvailable: true
+      isAvailable: false
     },
     {
       name: 'Morning Yoga Flow',
