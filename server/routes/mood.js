@@ -22,7 +22,7 @@ router.get("/:userId", authenticateUser, async (req, res) => {
   const { userId } = req.params;
 
   try {
-    const moods = await Mood.find({ userId }).sort({ timestamp: -1 }); // Sorting by timestamp
+    const moods = await Mood.find({ userId }).sort({ timestamp: 1 }); // Sorting by timestamp
     res.status(200).json(moods);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve mood history." });
