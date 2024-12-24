@@ -18,6 +18,7 @@ export const environment = {
 };
 
 ```
+**Note:** `apiUrl` **shouldn't** contain `/` at end
 
 #### API used in this project:
 1. [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72)
