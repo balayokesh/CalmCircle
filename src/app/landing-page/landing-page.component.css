@@ -75,7 +75,7 @@ h2 {
 #footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #333;
+  background-color: var(--bg-secondary);
   color: white;
 }
 
@@ -86,7 +86,7 @@ h2 {
 #header {
   display: flex;
   justify-content: space-between;
-  background: #333;
+  background: var(--bg-secondary);
   color: white;
   padding: 15px;
 }
