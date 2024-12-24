@@ -1,0 +1,19 @@
+<div class="container d-flex justify-content-center text-center">
+    <select id="keyword-select" (change)="onKeywordChange($event)" class="form-select w-50">
+        <option value="">-- Select a Topic --</option>
+        <option *ngFor="let keyword of keywords" [value]="keyword">{{ keyword }}</option>
+    </select>
+</div>
+
+<!-- Display error message if exists -->
+<div *ngIf="errorMessage" class="alert alert-danger" ngClass="mt-3 text-center">
+    {{ errorMessage }}
+  </div>
+
+<div class="results-container">
+    <div *ngFor="let resource of resources" class="resource-card">
+        <h3>{{ resource.title }}</h3>
+        <p>{{ resource.snippet }}</p>
+        <a [href]="resource.link" target="_blank">Read More</a>
+    </div>
+</div>
