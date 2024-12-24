@@ -1,0 +1,55 @@
+<div class="mt-4 text-center d-flex flex-column align-items-center">
+  <h3 class="text-center mb-1">Choose an exercise type below</h3>
+
+  <div class="form-group w-50 mb-4">
+    <select
+      id="exercise-type"
+      class="form-select text-center"
+      [(ngModel)]="filterType"
+      (change)="filterExercises()"
+    >
+      <option value="">All</option>
+      <option value="meditation">Meditation</option>
+      <option value="breathing exercise">Breathing Exercise</option>
+      <option value="workout">Workout</option>
+      <option value="stretching">Stretching</option>
+    </select>
+  </div>
+
+  <div class="row w-100 text-center d-flex justify-content-center">
+    <div *ngFor="let exercise of filteredExercises" class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img
+          [src]="exercise.imagePath"
+          class="card-img-top"
+          alt="{{ exercise.name }}"
+          height="220px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ exercise.name }}</h5>
+          <p class="card-text">{{ exercise.description }}</p>
+          <p class="card-text">
+            <small class="text-muted">
+              User Streak: 
+              <span [ngClass]="{'fire-effect': exercise.userStreak > 0}">{{ exercise.userStreak }} days</span>
+            </small>
+          </p>                   
+        </div>
+        <div class="card-footer text-center p-0">
+          <ng-container *ngIf="exercise.isAvailable; else comingSoon">
+            <a
+              [href]="exercise.mediaURL"
+              target="_blank"
+              class="btn btn-primary w-100"
+            >
+              <i class="fas fa-play"></i> Start
+            </a>
+          </ng-container>
+          <ng-template #comingSoon>
+            <div class="btn btn-warning w-100">Coming Soon</div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
