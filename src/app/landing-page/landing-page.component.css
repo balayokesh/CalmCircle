@@ -87,7 +87,6 @@ h2 {
   display: flex;
   justify-content: space-between;
   background: #333;
-  border-bottom: 2px solid black;
   color: white;
   padding: 15px;
 }
