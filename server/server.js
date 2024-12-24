@@ -10,7 +10,15 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 
 // Middleware
-app.use(cors());
+const allowedOrigin = "https://q8pv3r-45573.csb.app"; // The frontend's origin URL
+const corsOptions = {
+  origin: allowedOrigin,
+  credentials: true, // Allow credentials (cookies) to be sent
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));

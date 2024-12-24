@@ -1,1 +1,29 @@
 <p>mood-log works!</p>
+
+<form class="mb-4" (ngSubmit)="logMood()">
+  <div class="row">
+    <div class="col-md-4">
+      <select
+        class="form-select"
+        required
+        [(ngModel)]="moodData.mood"
+        name="mood"
+      >
+        <option value="" disabled>Select your mood</option>
+        <option *ngFor="let mood of moods" [value]="mood">{{ mood }}</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Add notes (optional)"
+        [(ngModel)]="moodData.notes"
+        name="notes"
+      />
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Log Mood</button>
+    </div>
+  </div>
+</form>
