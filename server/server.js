@@ -10,7 +10,15 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 
 // Middleware
-app.use(cors());
+const allowedOrigin = process.env.FRONTEND_URL;
+const corsOptions = {
+  origin: allowedOrigin,
+  credentials: true, // Allow credentials (cookies) to be sent
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));

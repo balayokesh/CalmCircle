@@ -1,2 +1,63 @@
-<p>dashboard works!</p>
-<button (click)="logout()">Logout</button>
+<div id="header">
+  <h1 (click)="redirectToHome()" class="ms-3 mt-1">Calm Circle</h1>
+  <div class="auth-links">
+    <a (click)="logout()">Logout</a>
+  </div>
+</div>
+
+<div>
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    [destroyOnHide]="false"
+    class="text-center justify-content-center nav-tabs fs-5"
+    style="background-color: #e3f2fd;"
+  >
+    <li [ngbNavItem]="1" [destroyOnHide]="true">
+      <button ngbNavLink>Track Mood</button>
+      <ng-template ngbNavContent>
+        <div class=" px-5 container">
+        <app-mood-log></app-mood-log>
+      </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2" [destroyOnHide]="true">
+      <button ngbNavLink>Journal</button>
+      <ng-template ngbNavContent>
+        <ngb-alert [dismissible]="false" class="d-block mt-3" type="danger">
+          This tab content DOM will de destroyed when not active
+        </ngb-alert>
+        <p>
+          Raw denim you probably haven't heard of them jean shorts Austin.
+          Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+          butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+          qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+          iphone. Seitan aliquip quis cardigan american apparel, butcher
+          voluptate nisi qui.
+        </p>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3" [destroyOnHide]="true">
+      <button ngbNavLink>One</button>
+      <ng-template ngbNavContent>
+        <ngb-alert [dismissible]="false" class="d-block mt-3" type="danger">
+          This tab content DOM will de destroyed when not active
+        </ngb-alert>
+
+        <p>
+          Raw denim you probably haven't heard of them jean shorts Austin.
+          Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+          butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+          qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+          iphone. Seitan aliquip quis cardigan american apparel, butcher
+          voluptate nisi qui.
+        </p>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

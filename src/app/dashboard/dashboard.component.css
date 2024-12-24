@@ -1,0 +1,23 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-secondary);
+  color: white;
+}
+
+.auth-links {
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.auth-links a {
+  color: white;
+  font-size: 1em;
+  margin: 0 15px;
+  text-decoration: underline;
+}
+
+h1,
+.auth-links a:hover {
+  cursor: pointer;
+}

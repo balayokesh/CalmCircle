@@ -4,12 +4,10 @@ const Mood = require("../models/mood.model");
 
 const authenticateUser = require("../controllers/authenticate.js");
 
-// Task 1: Log Mood (POST request to log a new mood entry)
-router.post("/log", authenticateUser, async (req, res) => {
+router.post("/", authenticateUser, async (req, res) => {
   const { userId, mood, notes } = req.body;
 
   try {
-    // Create a new mood entry
     const newMood = new Mood({ userId, mood, notes });
     await newMood.save();
     res
@@ -20,8 +18,7 @@ router.post("/log", authenticateUser, async (req, res) => {
   }
 });
 
-// Task 2: Get Mood History (GET request to retrieve mood history for a user)
-router.get("/history/:userId", authenticateUser, async (req, res) => {
+router.get("/:userId", authenticateUser, async (req, res) => {
   const { userId } = req.params;
 
   try {
