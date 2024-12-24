@@ -8,3 +8,17 @@ DATABASE_URL=`mongo db atlas URI`
 FRONTEND_URL=`https://localhost:3000`
 ```
 **Note:** FRONTEND_URL is used to whitelist CORS.
+
+#### Sample src/environments/environment.ts file
+```
+export const environment = {
+  production: false,
+  apiUrl: '<backend hosted URL>', 
+  apiKey: '<your rapid API key>'
+};
+
+```
+
+#### API used in this project:
+1. [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72)
+
