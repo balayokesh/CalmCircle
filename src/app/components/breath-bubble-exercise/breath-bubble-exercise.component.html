@@ -1,0 +1,28 @@
+<div
+  class="bg-dark px-3 d-flex align-items-center text-center justify-content-center text-white"
+  style="height: 100vh"
+>
+  <div class="d-flex w-25 flex-column align-items-center justify-content-around h-100">
+    <button class="btn btn-danger text-center" style="width: 36px" (click)="exitExercise()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="text-start">
+      <h3>Breath Bubble Exercise</h3>
+      <p>Follow the instructions below:</p>
+      <ul>
+        <li>Focus on your breath.</li>
+        <li>When you see "Breathe In", inhale slowly.</li>
+        <li>When you see "Breathe Out", exhale slowly.</li>
+      </ul>
+    </div>
+    <div class="alert alert-warning">Elapsed Time: <code>{{this.elapsedTime}}</code> seconds</div>
+  </div>
+  <div class="w-75">
+    <canvas
+      id="bubbleCanvas"
+      width="800"
+      height="600"
+      class="border rounded"
+    ></canvas>
+  </div>
+</div>

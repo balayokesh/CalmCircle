@@ -1,4 +1,5 @@
-<div class="container d-flex justify-content-center text-center">
+<div class="container mt-4 d-flex justify-content-center text-center d-flex flex-column align-items-center">
+    <h3 class="text-center mb-1">Choose a topic below</h3>
     <select id="keyword-select" (change)="onKeywordChange($event)" class="form-select w-50">
         <option value="">-- Select a Topic --</option>
         <option *ngFor="let keyword of keywords" [value]="keyword">{{ keyword }}</option>

@@ -12,40 +12,30 @@
     [(activeId)]="active"
     [destroyOnHide]="false"
     class="text-center justify-content-center nav-tabs fs-5"
-    style="background-color: #f5f5dc;"
+    style="background-color: #f5f5dc"
   >
     <li [ngbNavItem]="1" [destroyOnHide]="true">
-      <button ngbNavLink>Track Mood</button>
+      <button ngbNavLink class="mx-3">Track Mood</button>
       <ng-template ngbNavContent>
-        <div class=" px-5 container">
+        <div class="px-5 container">
           <app-mood-log></app-mood-log>
         </div>
       </ng-template>
     </li>
     <li [ngbNavItem]="2" [destroyOnHide]="true">
-      <button ngbNavLink>Resources</button>
+      <button ngbNavLink class="mx-3">Resources</button>
       <ng-template ngbNavContent>
-        <div class=" px-5 container">
+        <div class="px-5 container">
           <app-resources></app-resources>
         </div>
       </ng-template>
     </li>
     <li [ngbNavItem]="3" [destroyOnHide]="true">
-      <button ngbNavLink>One</button>
+      <button ngbNavLink class="mx-3">Mindfulness Exercises</button>
       <ng-template ngbNavContent>
-        <ngb-alert [dismissible]="false" class="d-block mt-3" type="danger">
-          This tab content DOM will de destroyed when not active
-        </ngb-alert>
-
-        <p>
-          Raw denim you probably haven't heard of them jean shorts Austin.
-          Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-          butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
-          qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-          iphone. Seitan aliquip quis cardigan american apparel, butcher
-          voluptate nisi qui.
-        </p>
+        <div class="px-5 container">
+          <app-exercise></app-exercise>
+        </div>
       </ng-template>
     </li>
   </ul>
