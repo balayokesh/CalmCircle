@@ -5,6 +5,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
+import { BreathBubbleExerciseComponent } from './components/breath-bubble-exercise/breath-bubble-exercise.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'breath-bubble', component: BreathBubbleExerciseComponent },
 ];
 
 @NgModule({

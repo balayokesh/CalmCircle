@@ -14,7 +14,7 @@ export class ExerciseComponent {
     {
       name: 'Breath Bubble Exercise',
       type: 'breathing exercise',
-      mediaURL: 'https://example.com/breath-bubble',
+      mediaURL: '/breath-bubble',
       imagePath: '../../../assets/images/Bubble breathing.png',
       description:
         'A guided breathing exercise that helps you focus on your breath using a visual bubble.',
