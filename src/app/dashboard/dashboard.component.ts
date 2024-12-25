@@ -17,7 +17,7 @@ import { ChatComponent } from "../components/chat/chat.component";
 })
 export class DashboardComponent {
   constructor(private authService: AuthService, private router: Router) {}
-  active = 3;
+  active = 1;
   logout() {
     console.log('clicked log out');
     this.authService.logout();
