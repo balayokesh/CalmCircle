@@ -6,17 +6,18 @@ import { Router } from '@angular/router';
 import { ResourcesComponent } from "../components/resources/resources.component";
 import { ExerciseComponent } from "../components/exercise/exercise.component";
 import { NotificationManagerComponent } from "../components/notification-manager/notification-manager.component";
+import { ChatComponent } from "../components/chat/chat.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgbNavModule, NgbAlertModule, MoodLogComponent, ResourcesComponent, ExerciseComponent, NotificationManagerComponent],
+  imports: [NgbNavModule, NgbAlertModule, MoodLogComponent, ResourcesComponent, ExerciseComponent, NotificationManagerComponent, ChatComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
   constructor(private authService: AuthService, private router: Router) {}
-  active = 4;
+  active = 3;
   logout() {
     console.log('clicked log out');
     this.authService.logout();

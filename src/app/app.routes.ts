@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { BreathBubbleExerciseComponent } from './components/breath-bubble-exercise/breath-bubble-exercise.component';
+import { ChatPageComponent } from './components/chat-page/chat-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -18,6 +19,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'breath-bubble', component: BreathBubbleExerciseComponent },
+  { path: 'chat/:username', component: ChatPageComponent },
 ];
 
 @NgModule({

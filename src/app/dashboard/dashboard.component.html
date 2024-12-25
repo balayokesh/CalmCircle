@@ -31,6 +31,14 @@
       </ng-template>
     </li>
     <li [ngbNavItem]="3" [destroyOnHide]="true">
+      <button ngbNavLink class="mx-3">Chat Anonymously</button>
+      <ng-template ngbNavContent>
+        <div class="px-5 container">
+          <app-chat></app-chat>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="4" [destroyOnHide]="true">
       <button ngbNavLink class="mx-3">Mindfulness Exercises</button>
       <ng-template ngbNavContent>
         <div class="px-5 container">
@@ -38,7 +46,7 @@
         </div>
       </ng-template>
     </li>
-    <li [ngbNavItem]="4" [destroyOnHide]="true">
+    <li [ngbNavItem]="5" [destroyOnHide]="true">
       <button ngbNavLink class="mx-3">Reminders</button>
       <ng-template ngbNavContent>
         <div class="px-5 container">
