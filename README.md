@@ -18,8 +18,12 @@ export const environment = {
 };
 
 ```
-**Note:** `apiUrl` **shouldn't** contain `/` at end
+**Note:** URL's **shouldn't** contain `/` at end
 
 #### API used in this project:
 1. [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72)
+
+#### Live Preview:
+Frontend hosted using gh-pages: [https://balayokesh.github.io/CalmCircle/](https://balayokesh.github.io/CalmCircle/)  
+Backend API hosted using Render: [https://calmcircle.onrender.com](https://calmcircle.onrender.com)
 
