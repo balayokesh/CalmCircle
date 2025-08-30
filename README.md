@@ -2,6 +2,13 @@
 
 A Mental Health Companion App that helps users manage their mental well-being through mindfulness, mood tracking, and peer support.
 
+#### Steps to run:
+Install npm dependencies:  
+```npm install --legacy-peer-deps```
+
+Run the application:  
+`npx ng serve`
+
 #### Sample server/.env file  
 ```
 DATABASE_URL=`mongo db atlas URI`  
