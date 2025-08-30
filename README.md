@@ -2,35 +2,25 @@
 
 A Mental Health Companion App that helps users manage their mental well-being through mindfulness, mood tracking, and peer support.
 
-#### Steps to run:
-Install npm dependencies:  
-```npm install --legacy-peer-deps```
-
-Run the application:  
-`npx ng serve`
-
-#### Sample server/.env file  
-```
-DATABASE_URL=`mongo db atlas URI`  
-FRONTEND_URL=`https://localhost:3000`
-```
-**Note:** FRONTEND_URL is used to whitelist CORS.
-
-#### Sample src/environments/environment.ts file
-```
-export const environment = {
-  production: false,
-  apiUrl: '<backend hosted URL>', 
-  apiKey: '<your rapid API key>'
-};
-
-```
-**Note:** URL's **shouldn't** contain `/` at end
-
-#### API used in this project:
-1. [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72)
-
-#### Live Preview:
+### Live Preview:
 Frontend hosted using gh-pages: [https://balayokesh.github.io/CalmCircle/](https://balayokesh.github.io/CalmCircle/)  
-Backend API hosted using Render: [https://calmcircle.onrender.com](https://calmcircle.onrender.com)
 
+### Steps to run the application locally:
+#### Requirements:
+MongoDB Atlas URI, RapidAPI API key with [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72) enabled.
+#### To start the frontend:
+Inside `/src/environments/` rename `environment.example.ts` to `environment.ts` and fill in the required details.
+
+```
+npm install --force
+ng serve
+```
+#### To start backend:
+Inside `/server` Rename `.env.example` to `.env` and fill in the required details  
+```
+cd server
+node server.js
+```
+
+### Tech Stack:
+Angular, NodeJs, expressJs, MongoDB, [Google Search API](https://rapidapi.com/neoscrap-net/api/google-search72)
