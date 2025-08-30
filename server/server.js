@@ -12,7 +12,7 @@ const bodyParser = require("body-parser");
 // Middleware
 const allowedOrigin = process.env.FRONTEND_URL;
 const corsOptions = {
-  origin: allowedOrigin,
+  origin: "*",
   credentials: true, // Allow credentials (cookies) to be sent
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
